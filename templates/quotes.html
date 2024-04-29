@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotations</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .quote-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .quote-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .quote-table th,
+    .quote-table td {
+      padding: 10px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc;
+    }
+    .quote-actions a {
+      color: #267c78;
+      margin-right: 10px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .quote-actions a:hover {
+      color: #0d5257;
+    }
+    .add-btn {
+      display: inline-block;
+      background-color: #267c78;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .add-btn:hover {
+      background-color: #0d5257;
+    }
+    .quote-box {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="quote-container">
+    <h1>Quotes</h1>
+    <div class="quote-box">
+      <table class="table quote-table">
+        {% for item in data %}
+        <tr>
+          <td>{{ item["owner"] }}</td>
+          <td>{{ item["text"] }}</td>
+          <td><em>--</em> <em>{{ item["author"] }}</em></td>
+          <td class="quote-actions">
+            <a href="/edit/{{ item['_id'] }}"><i class="material-icons">edit</i></a>
+            <a href="/delete/{{ item['_id'] }}"><i class="material-icons">delete</i></a>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <a href="/add" class="add-btn">Add a new quotation</a>
+    <p>User = {{ user }} (<a href="/logout">Logout</a>)</p>
+  </div>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

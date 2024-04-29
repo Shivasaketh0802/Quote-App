@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Quote</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        .custom-form-container {
+            
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #bcc4a6;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .custom-form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333333;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #555555;
+        }
+        .form-control {
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+        }
+        .form-check-label {
+            color: #555555;
+        }
+        .btn-primary {
+            background-color: #2a878a;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #372f9e;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="custom-form-container">
+                <h1 class="custom-form-title">Please enter the quote!!!</h1>
+                <form action="/add" method="POST">
+                    <div class="form-group">
+                        <label for="quote">Quote</label>
+                        <textarea class="form-control"  placeholder="Enter Quote here!!" id="quote" name="quote" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author</label>
+                        <input type="text" placeholder="Enter the name of Author!!" class="form-control" id="author" name="author" required>
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="public" name="public">
+                        <label class="form-check-label" for="public">Public</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

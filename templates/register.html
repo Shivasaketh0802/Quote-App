@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register your Account</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .custom-form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #a7a499;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            color: #090a0c;
+        }
+
+        .custom-form-group label {
+            color: #495057;
+        }
+
+        .custom-submit-btn {
+            background-color: #613b3b;
+            border-color: #961b21;
+        }
+
+        .custom-submit-btn:hover {
+            background-color: #0c5b33;
+            border-color: #0b5b37;
+        }
+
+        .custom-cancel-btn {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .custom-cancel-btn:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6">
+            <div class="custom-form-container">
+                <h1 class="custom-form-title">Welcome Mate, Create  your Account Here!!</h1>
+                <form action="/register" method="POST">
+                    <div class="form-group custom-form-group">
+                        <label for="user"><i class="fas fa-user"></i> Username</label>
+                        <input type="text" placeholder="Enter username" class="form-control" id="user" name="user" required>
+                    </div>
+                    <div class="form-group custom-form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" placeholder="Password!!" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="form-group custom-form-group">
+                        <label for="password2"><i class="fas fa-lock"></i> Re-enter password</label>
+                        <input type="password" placeholder="Re-Enter your Password" class="form-control" id="password2" name="password2" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block custom-submit-btn"><i class="fas fa-check-circle"></i> Register</button>
+                    <br>
+                    <a href="/" class="btn btn-secondary btn-block custom-cancel-btn"><i class="fas fa-times-circle"></i> Cancel</a>
+                </form>
+                <p class="text-center mt-3">Already registered? <a href="/login">Log in here!</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
